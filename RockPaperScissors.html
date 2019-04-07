@@ -19,7 +19,7 @@
     function singleRound(playerSelection, computerSelection){
         let userStr = playerSelection.toUpperCase();
         switch(userStr){
-            case ROCK:
+            case "ROCK":
                 if (computerSelection == "ROCK"){
                     return `It is a tie! Both of you chose ${computerSelection}`;
                 } else if (computerSelection == "PAPER"){
@@ -27,7 +27,7 @@
                 } else if (computerSelection == "SCISSORS"){
                     return `You win! ${userSelection} beats ${computerSelection}`;
                 }
-            case PAPER:
+            case "PAPER":
                 if (computerSelection == "PAPER"){
                     return `It is a tie! Both of you chose ${computerSelection}`;
                 } else if (computerSelection == "SCISSORS"){
@@ -35,7 +35,7 @@
                 } else if (computerSelection == "ROCK"){
                     return `You win! ${userSelection} beats ${computerSelection}`;
                 }
-            case SCISSORS:
+            case "SCISSORS":
                 if (computerSelection == "SCISSORS"){
                     return `It is a tie! Both of you chose ${computerSelection}`;
                 } else if (computerSelection == "ROCK"){
