@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<script>
+    function computerPlay(){
+        var min=1;
+        var max=3;
+        var random= Math.floor(Math.random() * (+max - +min)) + +min;
+        switch(random){
+            case 1:
+                return "ROCK";
+            case 2:
+                return "PAPER";
+            case 3:
+                return "SCISSORS";
+        }
+    }
+
+    function singleRound(playerSelection, computerSelection){
+        let userStr = playerSelection.toUpperCase();
+        switch(userStr){
+            case ROCK:
+                if (computerSelection == "ROCK"){
+                    return `It is a tie! Both of you chose ${computerSelection}`;
+                } else if (computerSelection == "PAPER"){
+                    return `You lose! ${computerSelection} beats ${userStr}`;
+                } else if (computerSelection == "SCISSORS"){
+                    return `You win! ${userSelection} beats ${computerSelection}`;
+                }
+            case PAPER:
+                if (computerSelection == "PAPER"){
+                    return `It is a tie! Both of you chose ${computerSelection}`;
+                } else if (computerSelection == "SCISSORS"){
+                    return `You lose! ${computerSelection} beats ${userStr}`;
+                } else if (computerSelection == "ROCK"){
+                    return `You win! ${userSelection} beats ${computerSelection}`;
+                }
+            case SCISSORS:
+                if (computerSelection == "SCISSORS"){
+                    return `It is a tie! Both of you chose ${computerSelection}`;
+                } else if (computerSelection == "ROCK"){
+                    return `You lose! ${computerSelection} beats ${userStr}`;
+                } else if (computerSelection == "PAPER"){
+                    return `You win! ${userSelection} beats ${computerSelection}`;
+                }
+        }
+    }
+
+    function game(){
+        var i = 0;
+        var userScore = 0;
+        var computerScore = 0;
+        while(i <= 5){
+            let userInput = prompt("Rock, Paper, Scissors, shoot! (Please enter your choice)");
+            let output = singleRound(userInput, computerPlay);
+            if(!output.includes("tie")){
+                console.log(output);
+                i++;
+                if(output.includes("win!")){
+                    userScore++;
+                } else{
+                    computerScore++;
+                }
+            }
+        }
+        console.log(`Game over! Final score: \nUser:${userScore}\nComputer:${computerScore}`)
+    }
+
+
+
+</script>
+
+</html>
