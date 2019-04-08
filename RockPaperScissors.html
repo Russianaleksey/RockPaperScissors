@@ -50,12 +50,10 @@
         var i = 0;
         var userScore = 0;
         var computerScore = 0;
-        while(i <= 5){
-            let userInput = prompt("Rock, Paper, Scissors, shoot! (Please enter your choice)");
-            var output = singleRound(userInput, computerPlay());
+        while(userScore + computerScore < 5){
+            var output = singleRound(prompt("Rock, Paper, Scissors, shoot! (Please enter your choice)"), computerPlay());
             if(!output.includes('tie')){
-                console.log(output);
-                i++;
+                alert(output);
                 if(output.includes('win!')){
                     userScore++;
                 } else{
