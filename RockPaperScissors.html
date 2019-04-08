@@ -25,7 +25,7 @@
                 } else if (computerSelection == "PAPER"){
                     return `You lose! ${computerSelection} beats ${userStr}`;
                 } else if (computerSelection == "SCISSORS"){
-                    return `You win! ${userSelection} beats ${computerSelection}`;
+                    return `You win! ${userStr} beats ${computerSelection}`;
                 }
             case "PAPER":
                 if (computerSelection == "PAPER"){
@@ -33,7 +33,7 @@
                 } else if (computerSelection == "SCISSORS"){
                     return `You lose! ${computerSelection} beats ${userStr}`;
                 } else if (computerSelection == "ROCK"){
-                    return `You win! ${userSelection} beats ${computerSelection}`;
+                    return `You win! ${userStr} beats ${computerSelection}`;
                 }
             case "SCISSORS":
                 if (computerSelection == "SCISSORS"){
@@ -41,7 +41,7 @@
                 } else if (computerSelection == "ROCK"){
                     return `You lose! ${computerSelection} beats ${userStr}`;
                 } else if (computerSelection == "PAPER"){
-                    return `You win! ${userSelection} beats ${computerSelection}`;
+                    return `You win! ${userStr} beats ${computerSelection}`;
                 }
         }
     }
@@ -52,11 +52,11 @@
         var computerScore = 0;
         while(i <= 5){
             let userInput = prompt("Rock, Paper, Scissors, shoot! (Please enter your choice)");
-            let output = singleRound(userInput, computerPlay);
-            if(!output.includes("tie")){
+            var output = singleRound(userInput, computerPlay());
+            if(!output.includes('tie')){
                 console.log(output);
                 i++;
-                if(output.includes("win!")){
+                if(output.includes('win!')){
                     userScore++;
                 } else{
                     computerScore++;
